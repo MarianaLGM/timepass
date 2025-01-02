@@ -43,7 +43,7 @@ Un texto dando la bienvenida y la ruta donde estamos
 Adjunto unas imagenes para poder entenderlo mejor:
 * index.js
 
-![index.js](./img/index.png))
+![index.js](./img/index.png)
 
 * Dentro de endrpoute.js
 
