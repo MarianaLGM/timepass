@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
         <body>
         <h1>BIENVENIDO</h1> 
         <h2>${req.actualHours}</h2>
-        <button> <a href="/endroute">Entrar</a></button>
+        <button><a href="/endroute">Entrar</a></button>
         <h2>${req.query.mensaje?req.query.mensaje:""}</h2>
         </body>
         </html>
