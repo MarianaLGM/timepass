@@ -14,20 +14,14 @@ console.log(nuevoFormatoHora)
 //Si es antes de las 12 al clickar en el botón nos saldrá un mensaje que diga algo como "Aún no son las 12 de la mañana"
 const validarHora= (req, res, next)=>{
 
-   /* if (nuevoFormatoHora>="12:00" && nuevoFormatoHora<="24:00" ){ 
+   if (nuevoFormatoHora>="12:00" && nuevoFormatoHora<="24:00" ){ 
         console.log("perfecto, es la hora")
-       // res.redirect.onclick("location.href='/endroute'")
-
         next() 
-    }else{*/
+    }else{
         res.locals.mensaje= `Aún tienes que esperar hasta las 12:00 para entrar`
-
         console.log("Aún no es la hora, espera hasta las 12:00 para entrar")
-        //res.locals.mensaje= `Aún tienes que esperar hasta las 12:00 para entrar`;
         res.redirect('/?mensaje=' + encodeURIComponent(res.locals.mensaje));
-        next() 
-   // }
-  
+   }
 };
 
 module.exports=validarHora

@@ -10,8 +10,8 @@ const indexRouter = require("./routes/index");
 const endrouteRouter = require("./routes/endroute");
 
 app.use(horaMiddleware);
-app.use(validarHora);
 app.use("/", indexRouter);
+app.use("/endroute",validarHora);
 app.use("/",endrouteRouter);
 
 app.listen(3000, () => {

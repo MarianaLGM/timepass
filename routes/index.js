@@ -12,7 +12,8 @@ const express=require("express")
 const router=express.Router();//para poder manejar las rutas
 
 router.get("/", (req, res) => {
-    res.send(`
+    console.log(req.query)
+    res.send (`
         <!DOCTYPE html>
         <html>
         <head>
@@ -22,11 +23,11 @@ router.get("/", (req, res) => {
         <h1>BIENVENIDO</h1> 
         <h2>${req.actualHours}</h2>
         <button> <a href="/endroute">Entrar</a></button>
-        <h2>${res.locals.mensaje}</h2>
+        <h2>${req.query.mensaje?req.query.mensaje:""}</h2>
         </body>
         </html>
         `);
-
+    
     });
     
   module.exports= router;
