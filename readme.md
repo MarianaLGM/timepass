@@ -66,7 +66,7 @@ Adjunto unas imagenes para poder entenderlo mejor:
 - Dentro de la `validarHora.js` donde `res.redirect` podría tener un aspecto similar a esto cuando se intente acceder a `/endroute`y aún no sea la hora:
 - Que no se te olvide `express.Router()` para generar las rutas
   
-  res.locals.mensaje = `Aún no es la hora, espera hasta las 14:00 para entrar`;
+  res.locals.mensaje = `Aún no es la hora, espera hasta las 12:00 para entrar`;
   return res.redirect('/?mensaje=' + encodeURIComponent(res.locals.mensaje));
 
 ## Y por último...

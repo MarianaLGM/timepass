@@ -20,11 +20,13 @@ router.get("/", (req, res) => {
         </head>
         <body>
         <h1>BIENVENIDO</h1> 
-        <h2>${req.timeType}</h2>
-        <button onclick=validarHora()> <a href="/endroute">Entrar</a></button>
+        <h2>${req.actualHours}</h2>
+        <button> <a href="/endroute">Entrar</a></button>
+        <h2>${res.locals.mensaje}</h2>
         </body>
         </html>
         `);
+
     });
     
   module.exports= router;

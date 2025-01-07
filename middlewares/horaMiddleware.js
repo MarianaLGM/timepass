@@ -7,7 +7,7 @@ const horaMiddleware= (req, res, next) =>{
     const hours= now.getHours();
     const minutes= now.getMinutes(); 
     const formattedTime= `${hours}:${minutes}`;
-    req.timeType=`La hora actual es: ${formattedTime}`
+    req.actualHours=`La hora actual es: ${formattedTime}`
     next()
     console.log(formattedTime)
 };

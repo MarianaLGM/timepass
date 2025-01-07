@@ -21,7 +21,7 @@ router.get("/endroute", (req, res) => {
   });
   
   router.use((req, res) => {
-    res.status(400).send(`<h1>página no encontrada. Hora actual: ${req.timeType}</h1>`);
+    res.status(400).send(`<h1>página no encontrada.</h1>`);
   });
   
   module.exports= router;
