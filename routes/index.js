@@ -22,8 +22,6 @@ router.get("/", (req, res) => {
         <h1>BIENVENIDO</h1> 
         <h2>${req.timeType}</h2>
         <button onclick=validarHora()> <a href="/endroute">Entrar</a></button>
-
-        <h2>${res.locals.mensaje}</h2>
         </body>
         </html>
         `);
