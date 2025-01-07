@@ -6,12 +6,13 @@ const app = express();
 //vamos a requerir las rutas y acceder a las carpetas:
 const horaMiddleware = require("./middlewares/horaMiddleware");
 const validarHora = require("./middlewares/validarHora");
-const endroute = require("./routes/endroute");
-const index = require("./routes/index");
-//app.use(horaMiddleware);
-//app.use(validarHora);
-//app.use("/", endroute);
-//app.use("/", index);
+const indexRouter = require("./routes/index");
+const endrouteRouter = require("./routes/endroute");
+
+app.use(horaMiddleware);
+app.use(validarHora);
+app.use("/", indexRouter);
+app.use("/",endrouteRouter);
 
 app.listen(3000, () => {
     console.log("el servidor está escuchando en el puerto 3000");

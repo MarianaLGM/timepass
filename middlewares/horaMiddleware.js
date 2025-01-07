@@ -5,13 +5,15 @@
 const horaMiddleware= (req, res, next) =>{
     const now=new Date();
     const hours= now.getHours();
-    const minutes= now.getMinutes();
-    const seconds= now.getSeconds();  
-    const formattedTime= `${hours}:${minutes}:${seconds}`;
-    //req.dateType=`Son las ${formattedTime}. Solicitud recibida: ${req.method}path: ${req.url}`
-   // next()
-   console.log(formattedTime)
+    const minutes= now.getMinutes(); 
+    const formattedTime= `${hours}:${minutes}`;
+    req.timeType=`La hora actual es: ${formattedTime}`
+    next()
+    console.log(formattedTime)
 };
 
-module.exports=horaMiddleware()
+
+module.exports=horaMiddleware
+
+
 

@@ -12,17 +12,28 @@ console.log(nuevoFormatoHora)
 
 //Solo se podrá acceder a `/endroute` si la hora está entre las 12h de la mañana y las 24h.
 //Si es antes de las 12 al clickar en el botón nos saldrá un mensaje que diga algo como "Aún no son las 12 de la mañana"
-function mostrarMensaje (){
+const validarHora= (req, res, next)=>{
 
-    if (nuevoFormatoHora>="24:00" && nuevoFormatoHora<"12:00"){ 
-        console.log("¡Aún no son las 12 de la mañana!")
-        texto= "¡Aún no es la hora de entrar, espera a las 12 de la mañana!"
+    if (nuevoFormatoHora>="12:00" && nuevoFormatoHora<="24:00" ){ 
+        console.log("perfecto, es la hora")
+        //res.redirect.onclick("location.href='/endroute'")
     }else{
-        console.log("¡Aún no son las 12 de la mañana!")
-        texto= "¡Ya puedes entrar!" //pte acceso /endroute
+        console.log("Aún no es la hora, espera hasta las 12:00 para entrar")
+        res.locals.mensaje= `Aún tienes que esperar hasta las 12:00 para entrar`;
+        //return res.redirect('/?mensaje=' + encodeURIComponent(res.locals.mensaje));
     }
-}
-mostrarMensaje ()
+  
+    next()    
+};
 
+
+module.exports=validarHora
 
    // Si accedemos directamente a la ruta `/endroute`, nos devolverá el mismo error y misma ruta que si pulsaramos el botón 
+
+   /*- Dentro de la `validarHora.js` donde `res.redirect` 
+   podría tener un aspecto similar a esto cuando se intente acceder a `/endroute`y aún no sea la hora:*/
+
+   
+//return res.redirect('/?mensaje=' + encodeURIComponent(res.locals.mensaje));
+//res.locals.mensaje = "Aún no es la hora, espera hasta las 12:00 para entrar"
